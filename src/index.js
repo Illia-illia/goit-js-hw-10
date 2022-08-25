@@ -19,6 +19,8 @@ function onInputWrite(e) {
   fetchCountries(nameOfCountry)
     .then(r => {
       if (r.length > 10) {
+        blockEl.innerHTML = '';
+        listEl.innerHTML = '';
         return Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
@@ -37,7 +39,7 @@ function onRenderList(array) {
   return array
     .map(
       ({ name, flags }) =>
-        `<li class="country-item"><img src="${flags.png}" alt="${name.official}" width='32' height = '16'>
+        `<li class="country-item"><img src="${flags.png}" alt="${name.official}" width='32' height = '18'>
         <p class="country-text">${name.official}</p></li>`
     )
     .join('');
