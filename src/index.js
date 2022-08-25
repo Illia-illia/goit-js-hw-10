@@ -40,7 +40,7 @@ function onRenderList(array) {
   return array
     .map(
       ({ name, flags }) =>
-        `<li class="country-item"><img src="${flags.png}" alt="${name.official}" width='32' height = '18'>
+        `<li class="country-item"><img src="${flags.png}" alt="${name.official}" width='32' height = '20'>
         <p class="country-text">${name.official}</p></li>`
     )
     .join('');
@@ -52,7 +52,7 @@ function onRenderCountryCard(array) {
       ({ name, capital, population, flags, languages }) =>
         `<div class = "country-item"><img src="${flags.png}" alt="${
           name.official
-        }" width='30' height = '30'>
+        }" width='64' height = '40'>
         <h1 class="country-text">${name.official}</h1></div>
         <p class="country-text-info">Capital: ${capital}</p>
         <p class="country-text-info">Population: ${population}</p>
