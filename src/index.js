@@ -33,7 +33,10 @@ function onInputWrite(e) {
       blockEl.innerHTML = '';
       listEl.innerHTML = onRenderList(r);
     })
-    .catch(error => Notify.failure('Oops, there is no country with that name'));
+    .catch(error => {
+      blockEl.innerHTML = '';
+      listEl.innerHTML = '';
+    });
 }
 
 function onRenderList(array) {
